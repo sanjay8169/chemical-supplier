@@ -1,0 +1,48 @@
+<div class="container">
+    <header>
+      <div class="text-center mt-5">
+        <h1 class="display-4">Welcome to Our Chemical Supplier</h1>
+        <p class="lead">We provide high-quality chemical products for various industries.</p>
+        <a class="btn btn-primary btn-lg" routerLink="/portfolio">Explore Products</a>
+      </div>
+    </header>
+  
+    <div id="chemicalCarousel" class="carousel slide mt-4" data-ride="carousel">
+      <c-carousel>
+        <c-carousel-indicators></c-carousel-indicators>
+        <c-carousel-inner>
+          <c-carousel-item *ngFor="let slide of slides">
+            <img
+              alt="{{slide.title}}"
+              class="d-block w-100"
+              loading="lazy"
+              src="{{slide.src}}"
+            />
+            <c-carousel-caption class="d-none d-md-block">
+              <h3>{{slide.title}}</h3>
+              <p>{{slide.subtitle}}</p>
+            </c-carousel-caption>
+          </c-carousel-item>
+        </c-carousel-inner>
+        <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+        <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+      </c-carousel>
+    </div>
+
+
+  
+    <div class="row mt-4 image-gallery">
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/250x150?text=Chemical+1" class="card-img-top" alt="Chemical Product 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/250x150?text=Chemical+2" class="card-img-top" alt="Chemical Product 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/250x150?text=Chemical+3" class="card-img-top" alt="Chemical Product 3">
+      </div>
+    </div>
+  
+    <p class="mt-4">Our products are sourced from trusted manufacturers and are tested for quality and safety.</p>
+  </div>
+  

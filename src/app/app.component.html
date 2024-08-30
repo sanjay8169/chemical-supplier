@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand" href="#">Chemical Supplier</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" [routerLink]="''">Home</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="'about'">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="'product'">Product Portfolio</a></li>
+      <li class="nav-item dropdown" (click)="toggleDropdown()" [class.show]="isDropdownOpen">
+        <a class="nav-link dropdown-toggle" id="downloadsDropdown" role="button">
+          Downloads
+        </a>
+        <div class="dropdown-menu" [class.show]="isDropdownOpen">
+          <a class="dropdown-item" [routerLink]="'downloads/catalogue'">Catalogue</a>
+          <a class="dropdown-item" [routerLink]="'downloads/certification'">Certification</a>
+          <a class="dropdown-item" [routerLink]="'downloads/packing'">Packing</a>
+        </div>
+      </li>
+      
+    </ul>
+
+    
+  </div>
+  <!-- <div class="card">
+    <p-menubar [model]="items" />
+</div> -->
+</nav>
+
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="bg-info text-center py-4">
+  <p>&copy; 2023 Chemical Supplier. All rights reserved.</p>
+  <p>Contact us: infochemicalsupplier.com | Phone: (123) 456-7890</p>
+</footer>
