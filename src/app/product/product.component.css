@@ -1,0 +1,57 @@
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .dropdown-header {
+      background-color: #00ffcc; /* Background color for the dropdown header */
+      color: #000; /* Text color */
+      border-radius: 5px; /* Rounded corners for the header */
+      border: 1px solid #ccc; /* Border for the header */
+      cursor: pointer; /* Cursor changes to pointer on hover */
+      position: relative; /* Ensure the arrow can be positioned relative to the header */
+      transition: background-color 0.3s ease; /* Smooth transition for background color on hover */
+    }
+    
+    .dropdown-header:hover {
+      background-color: #00cc99; /* Slightly darker color on hover */
+    }
+  
+  .expandable-content {
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    max-height: 0;
+    opacity: 0;
+  }
+  
+  .expandable-content.expanded {
+    max-height: 1000px; /* Adjust based on content size */
+    opacity: 1;
+      }
+      
+      .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+      
+      .rotate-icon {
+        transform: rotate(180deg);
+  }
+  

@@ -16,3 +16,7 @@
     background-color: #e7f1ff;
     color: #333;
   }
+
+  .bg-info{
+    background-color: #00ffff !important;
+  }

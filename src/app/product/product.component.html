@@ -1,6 +1,89 @@
 <h2>Product Portfolio</h2>
 <div class="row">
-  <div class="col-md-4">
+  <!-- <div class="container">
+    <div *ngFor="let group of groupedData | keyvalue">
+      <div class="row my-3">
+        <div class="col-12">
+          <h4 class="p-3">{{ group.key }}</h4>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            @for (item of group.value; track $index) {
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ item.ProductName }}</h5>
+                    <p class="card-text">
+                      <strong>SKU:</strong> {{ item.SKUNo }}<br>
+                      <strong>Packing Size:</strong> {{ item.PACKSIZE }}<br>
+                      <strong>HSN Code:</strong> {{ item.HSNCODE }}<br>
+                      <strong>CAS Number:</strong> {{ item.CASNO || 'N/A' }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+
+  <div class="container">
+    <!-- Loop through each group of products by their first letter -->
+    <div *ngFor="let group of groupedData | keyvalue">
+      <!-- Letter header with toggle functionality -->
+      <div class="row my-3">
+        <div class="col-12">
+          <div class="dropdown-header p-3 cursor-pointer" (click)="toggleGroup(group.key)">
+            {{ group.key }}
+            <!-- Arrow icon to indicate expand/collapse -->
+            <span [ngClass]="{'rotate-icon': isGroupOpen(group.key)}" class="float-right arrow">&#9660;</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Expandable content -->
+          <div [ngClass]="{'collapse': !isGroupOpen(group.key)}">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>SKU</th>
+                  <th>Packing Size</th>
+                  <th>HSN Code</th>
+                  <th>CAS Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Loop through each product in the group -->
+                @for (item of group.value; track $index) {
+                  <tr>
+                    <td>{{ item.ProductName }}</td>
+                    <td>{{ item.SKUNo }}</td>
+                    <td>{{ item.PACKSIZE }}</td>
+                    <td>{{ item.HSNCODE }}</td>
+                    <td>{{ item.CASNO || 'N/A' }}</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <!-- <div class="col-md-4">
     <div class="card mb-4">
       <img src="https://via.placeholder.com/800x400?text=Chemical+Image+1" class="card-img-top" alt="Product 1">
       <div class="card-body">
@@ -26,5 +109,5 @@
         <p class="card-text">Description of Product 3.</p>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
