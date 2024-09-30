@@ -31,24 +31,66 @@
       </div>
     </div>
   </div> -->
-  
 
-  <div class="container">
-    <!-- Loop through each group of products by their first letter -->
+<!-- <div><input type="text" placeholder="Filter by city" #filter>
+  <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button></div>
+    <p-table [value]="filteredLocationList" [tableStyle]="{ 'min-width': '50rem' }" class="table"[globalFilterFields]="['ProductName']"> -->
+      <p-table #dtEmployee [value]="filteredLocationList" [rowHover]="true" 
+            [rows]="30" [showCurrentPageReport]="true"
+            [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [filterDelay]="0" [globalFilterFields]="['ProductName']">
+            <ng-template pTemplate="caption">
+              <div class="table-header">
+                <nav aria-label="breadcrumb justify-content flex-end" class="d-flex">
+                
+                  <span class="p-input-icon-left mx-1">
+                    
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input pInputText class="rounded-pill" type="text" (input)="applyGlobalFilter($event)"
+                      placeholder="Search Product Name" />
+                  </span>
+                </nav>
+              </div>
+          </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>SKU</th>
+
+          <th>Product Name</th>
+          <th>Packing Size</th>
+          <th>HSN Code</th>
+          <th>CAS Number</th>
+          <th>MSDS</th>
+          <th>COAs</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>{{ item.SKUNo }}</td>
+
+          <td>{{ item.ProductName }}</td>
+          <td>{{ item.PACKSIZE }}</td>
+          <td>{{ item.HSNCODE }}</td>
+          <td>{{ item.CASNO || 'N/A' }}</td>
+          <td><a href="/src/assets/pdf/msds_{{ item.SKUNo }}.pdf" target=”_blank”><i class="fa-regular fa-file-pdf"></i></a></td>
+          <td><a href="/src/assets/pdf/coas_{{ item.SKUNo }}.pdf" target=”_blank”><i class="fa-regular fa-file-pdf"></i></a></td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+
+  <!-- <div class="container">
     <div *ngFor="let group of groupedData | keyvalue">
-      <!-- Letter header with toggle functionality -->
       <div class="row my-3">
         <div class="col-12">
           <div class="dropdown-header p-3 cursor-pointer" (click)="toggleGroup(group.key)">
             {{ group.key }}
-            <!-- Arrow icon to indicate expand/collapse -->
             <span [ngClass]="{'rotate-icon': isGroupOpen(group.key)}" class="float-right arrow">&#9660;</span>
           </div>
         </div>
       </div>
-  
-      <!-- Expandable content -->
-          <div [ngClass]="{'collapse': !isGroupOpen(group.key)}">
+
+      <div [ngClass]="{'collapse': !isGroupOpen(group.key)}">
         <div class="row">
           <div class="col-12">
             <table class="table table-bordered">
@@ -62,15 +104,14 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- Loop through each product in the group -->
                 @for (item of group.value; track $index) {
-                  <tr>
-                    <td>{{ item.ProductName }}</td>
-                    <td>{{ item.SKUNo }}</td>
-                    <td>{{ item.PACKSIZE }}</td>
-                    <td>{{ item.HSNCODE }}</td>
-                    <td>{{ item.CASNO || 'N/A' }}</td>
-                  </tr>
+                <tr>
+                  <td>{{ item.ProductName }}</td>
+                  <td>{{ item.SKUNo }}</td>
+                  <td>{{ item.PACKSIZE }}</td>
+                  <td>{{ item.HSNCODE }}</td>
+                  <td>{{ item.CASNO || 'N/A' }}</td>
+                </tr>
                 }
               </tbody>
             </table>
@@ -78,11 +119,11 @@
         </div>
       </div>
     </div>
-  </div>
-  
-  
-  
-  
+  </div> -->
+
+
+
+
   <!-- <div class="col-md-4">
     <div class="card mb-4">
       <img src="https://via.placeholder.com/800x400?text=Chemical+Image+1" class="card-img-top" alt="Product 1">

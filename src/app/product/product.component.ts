@@ -1,35 +1,26 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, ViewChild } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-
+import { TableModule,Table } from 'primeng/table';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
+import { PaginatorModule } from 'primeng/paginator';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TableModule,InputIconModule, IconFieldModule, InputTextModule,PaginatorModule],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css',
-  animations: [
-    trigger('expandCollapse', [
-      state('collapsed', style({
-        height: '0',
-        opacity: 0,
-        overflow: 'hidden'
-      })),
-      state('expanded', style({
-        height: '*',
-        opacity: 1,
-        overflow: 'hidden'
-      })),
-      transition('collapsed <=> expanded', [
-        animate('0.5s ease-out')
-      ])
-    ])
-  ]
+   styleUrl: './product.component.css'
 })
 export class ProductComponent implements OnInit {
-
+    loading: any = {
+        list: true,
+        details: false
+      };
+    filteredLocationList: any;
   jsonData  = [
     {
         "Id": 1,
@@ -31066,10 +31057,30 @@ export class ProductComponent implements OnInit {
     }
 ];
 
+constructor(){this.filteredLocationList = this.jsonData}
+
 groupedData: { [key: string]: Product[] } = {};
 
   ngOnInit() {
     this.sortAndGroupData();
+  }
+  
+  @ViewChild('dtEmployee') dtEmployee!: Table; // Add this reference
+
+  applyGlobalFilter(event: Event) {
+    const inputValue = (event.target as HTMLInputElement).value;
+    this.dtEmployee.filterGlobal(inputValue, 'contains');
+  }
+
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredLocationList = this.jsonData;
+      return;
+    }
+  
+    this.filteredLocationList = this.jsonData.filter(
+      x => x.ProductName.toLowerCase().includes(text.toLowerCase())
+    );
   }
 
   sortAndGroupData() {

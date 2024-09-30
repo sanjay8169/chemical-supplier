@@ -1,10 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info bgcolor" style="color: #00ffcc;"> 
-  <a class="navbar-brand" href="#">Chemical Supplier</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<div class="container-fluid">
+<div class="row ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info bgcolor" style="color: #00ffcc;">
+    <div class="col-sm-8 m-3">
+      <a class="navbar-brand" href="#">Chemical Supplier</a>  
+    </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse col col-lg-2" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a class="nav-link" [routerLink]="''">Home</a></li>
       <li class="nav-item"><a class="nav-link" [routerLink]="'about'">About Us</a></li>
       <li class="nav-item"><a class="nav-link" [routerLink]="'product'">Product Portfolio</a></li>
@@ -18,15 +23,14 @@
           <a class="dropdown-item" [routerLink]="'downloads/packing'">Packing</a>
         </div>
       </li>
-      
+
     </ul>
 
-    
+
   </div>
-  <!-- <div class="card">
-    <p-menubar [model]="items" />
-</div> -->
+
 </nav>
+</div>
 
 <div class="container mt-4">
   <router-outlet></router-outlet>
@@ -36,3 +40,33 @@
   <p>&copy; 2024 Chemical Supplier. All rights reserved.</p>
   <p>Contact us: infochemicalsupplier.com | Phone: (123) 456-7890</p>
 </footer>
+
+</div>
+
+<!-- <p-menubar [model]="items" class="bgcolor">
+        <ng-template pTemplate="item" let-item>
+            <ng-container >
+                <a [routerLink]="item.route" class="p-menuitem-link">
+                    <span [class]="item.icon"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                </a>
+            </ng-container>
+            <ng-template #urlRef>
+                <a *ngIf="item.url; else noLink" [href]="item.url" class="p-menuitem-link">
+                    <span [class]="item.icon"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                </a>
+            </ng-template>
+            <ng-template #noLink>
+                <div class="p-menuitem-link">
+                    <span [class]="item.icon"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                    <span class="pi pi-fw pi-angle-down ml-2"></span>
+                </div>
+            </ng-template>
+        </ng-template>
+    </p-menubar> -->
+
+<!-- <div class="card">
+    <p-menubar [model]="items" />
+</div> -->
