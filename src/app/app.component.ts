@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
           },
           {
             label: 'Packing',
-            route: ''
+            route: 'downloads/packing'
           }
         ]
       },

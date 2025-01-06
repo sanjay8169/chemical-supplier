@@ -1,3 +1,25 @@
-<h2>Packing Information</h2>
-<p>Download packing information for our products here.</p>
-<a href="path/to/packing.pdf" class="btn btn-primary">Download Packing Info</a>
+<div class="card">
+    <h3 class="text-center">Image Gallery</h3>
+    <p-galleria 
+      [value]="images" 
+      [responsiveOptions]="responsiveOptions"
+      [numVisible]="5" 
+      styleClass="custom-galleria"
+      [autoPlay]="true" 
+      [circular]="true" 
+      [transitionInterval]="3000"
+      [showThumbnails]="true" 
+      [showIndicators]="true">
+      <ng-template pTemplate="item" let-item>
+        <div class="image-frame">
+          <img [src]="item.image" [alt]="item.alt">
+        </div>
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+        <div class="thumbnail-frame">
+          <img [src]="item.thumbnail" [alt]="item.alt">
+        </div>
+      </ng-template>
+    </p-galleria>
+  </div>
+  
