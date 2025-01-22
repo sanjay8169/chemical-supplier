@@ -1,14 +1,24 @@
 <div class="container-fluid">
 <div class="row ">
   <nav class="navbar navbar-expand-lg navbar-light bg-info bgcolor" style="color: #00ffcc;">
-    <div class="col-sm-8 m-3">
-      <a class="navbar-brand" href="#">Chemical Supplier</a>  
+    <div class="col-sm-8 m-1">
+      <a class="navbar-brand" [routerLink]="''">
+        <img src="../../images/logo/logo.png" alt="Logo" class="logo">
+        <!-- Aarnav Scientific -->
+      </a>  
     </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
+    <button
+    class="navbar-toggler m-3"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse col col-lg-2" id="navbarNav">
+  
+  <div class="collapse navbar-collapse col col-lg-2 m-3" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a class="nav-link" [routerLink]="''">Home</a></li>
       <li class="nav-item"><a class="nav-link" [routerLink]="'about'">About Us</a></li>
@@ -37,8 +47,9 @@
 </div>
 
 <footer class="bg-info text-center py-4">
-  <p>&copy; 2024 Chemical Supplier. All rights reserved.</p>
-  <p>Contact us: infochemicalsupplier.com | Phone: (123) 456-7890</p>
+  <p>&copy; 2024 Aarnav Scientific. All rights reserved.</p>
+  <p>Contact us: <a href="mailto:sales@aarnavscientific.co.in?subject=Inquiry&body=Hello, I would like more information about your products.">sales&#64;aarnavscientific.co.in</a>
+     | Phone: <a href="tel:+12345678910">(123) 456-7890</a></p>
 </footer>
 
 </div>
