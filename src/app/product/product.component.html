@@ -47,7 +47,7 @@
                     
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input pInputText class="rounded-pill" type="text" (input)="applyGlobalFilter($event)"
-                      placeholder="Search Product Name" />
+                      placeholder="Search By Product Name" />
                   </span>
                 </nav>
               </div>
@@ -60,6 +60,7 @@
           <th>Packing Size</th>
           <th>HSN Code</th>
           <th>CAS Number</th>
+          <th>UN Number</th>
           <th>MSDS</th>
           <th>COAs</th>
         </tr>
@@ -72,6 +73,7 @@
           <td>{{ item.PACKSIZE }}</td>
           <td>{{ item.HSNCODE }}</td>
           <td>{{ item.CASNO || 'N/A' }}</td>
+          <td>{{ item.UNNO}}</td>
           <td><a href="/src/assets/pdf/msds_{{ item.SKUNo }}.pdf" target=”_blank”><i class="fa-regular fa-file-pdf"></i></a></td>
           <td><a href="/src/assets/pdf/coas_{{ item.SKUNo }}.pdf" target=”_blank”><i class="fa-regular fa-file-pdf"></i></a></td>
         </tr>
