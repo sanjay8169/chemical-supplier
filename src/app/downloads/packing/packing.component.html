@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card animation">
     <h3 class="text-center">Image Gallery</h3>
     <p-galleria 
       [value]="images" 
@@ -9,7 +9,8 @@
       [circular]="true" 
       [transitionInterval]="3000"
       [showThumbnails]="true" 
-      [showIndicators]="true">
+      [showIndicators]="true"
+      >
       <ng-template pTemplate="item" let-item>
         <div class="image-frame">
           <img [src]="item.image" [alt]="item.alt">

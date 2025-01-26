@@ -11,12 +11,13 @@ import {
   ThemeDirective
 } from '@coreui/angular';
 import { NgFor } from '@angular/common';
+import { CertificationComponent } from "../downloads/certification/certification.component";
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ThemeDirective, CarouselComponent, CarouselIndicatorsComponent, CarouselInnerComponent, NgFor, CarouselItemComponent, CarouselCaptionComponent, CarouselControlComponent, RouterLink],
+  imports: [ThemeDirective, CarouselComponent, CarouselIndicatorsComponent, CarouselInnerComponent, NgFor, CarouselItemComponent, CarouselCaptionComponent, CarouselControlComponent, RouterLink, CertificationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit{
     };
     this.slides[1] = {
       id: 1,
-      src: 'images/compressed/PSX_20241222_234748.jpg',
+      src: 'images/compressed/PSX_20241222_234621.jpg',
       title: 'Second slide',
       subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     };
@@ -45,5 +46,7 @@ export class HomeComponent implements OnInit{
       subtitle: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
     };
   }
+
+  
   
 }

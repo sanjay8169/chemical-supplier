@@ -7,17 +7,22 @@ import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { RippleModule } from 'primeng/ripple';
+import { SearchBoxComponent } from '../app/search-box/search-box.component';
+import { DataService } from './Services/data.service';
+import { Product } from './Interfaces/Product';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,MenubarModule, BadgeModule, AvatarModule, InputTextModule, RippleModule,CommonModule],
+  imports: [RouterOutlet,RouterLink,MenubarModule, BadgeModule, AvatarModule, InputTextModule, RippleModule,CommonModule,SearchBoxComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-
-  constructor(private router: Router) {}
+  data  :any = [];
+  constructor(private router: Router,private dataService: DataService) {
+    this.data = this.dataService.getProduct();
+  }
 
   ngOnInit(): void {
     this.items = [
@@ -62,6 +67,8 @@ export class AppComponent implements OnInit {
   title = 'chemical-supplier';
   items: MenuItem[] | undefined;
 
+  selectedItem: Product | null = null;
+
   isDropdownOpen = false;
 
   toggleDropdown() {
@@ -74,6 +81,15 @@ export class AppComponent implements OnInit {
     if (!target.closest('.nav-item')) {
       this.isDropdownOpen = false;
     }
+  }
+
+  handleSearch(searchText: string) {
+    console.log('Search text:', searchText);
+  }
+
+  handleSelection(selected: Product) {
+    this.selectedItem = selected;
+    console.log('Selected item:', selected);
   }
 
 }

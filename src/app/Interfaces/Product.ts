@@ -1,8 +1,9 @@
 export interface Product {
     Id: number;
     SKUNo: string;
-    CASNO: string | null;
+    CASNO: string;
     ProductName:string;
     PACKSIZE: string;
-    HSNCODE :number
+    HSNCODE :number;
+    UNNO: string
   }

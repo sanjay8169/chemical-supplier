@@ -5,6 +5,7 @@
   .carousel-item img {
     border-radius: 5px; /* Rounded corners for images */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeIn 1s ease-in-out;
   }
   
   .image-gallery img {
@@ -22,3 +23,12 @@
   footer p {
     margin: 5px 0;
   }
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

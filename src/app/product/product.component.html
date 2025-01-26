@@ -1,5 +1,5 @@
 <h2>Product Portfolio</h2>
-<div class="row">
+<div class="row animation">
   <!-- <div class="container">
     <div *ngFor="let group of groupedData | keyvalue">
       <div class="row my-3">
@@ -38,16 +38,16 @@
       <p-table #dtEmployee [value]="filteredLocationList" [rowHover]="true" 
             [rows]="30" [showCurrentPageReport]="true"
             [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-            [filterDelay]="0" [globalFilterFields]="['ProductName']">
+            [filterDelay]="0" [globalFilterFields]="['ProductName', 'HSNCODE', 'CASNO', 'UNNO']">
             <ng-template pTemplate="caption">
               <div class="table-header">
-                <nav aria-label="breadcrumb justify-content flex-end" class="d-flex">
+                <nav aria-label="breadcrumb justify-content flex-end" class="d-flex ">
                 
                   <span class="p-input-icon-left mx-1">
                     
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input pInputText class="rounded-pill" type="text" (input)="applyGlobalFilter($event)"
-                      placeholder="Search By Product Name" />
+                      placeholder="Search By Product Name /HSN Code/CAS /UN NO" style="width: 650px;height: 50px;font-size: 18px;"/>
                   </span>
                 </nav>
               </div>

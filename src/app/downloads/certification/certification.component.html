@@ -1,3 +1,22 @@
-<h2>Product Certification</h2>
-<p>Download our product certification documents here.</p>
-<a href="path/to/certification.pdf" class="btn btn-primary">Download Certification</a>
+<div class="container mt-4">
+    <h1 class="text-center text-dark">Certification</h1>
+    <p class="text-center">
+      Aarnav Scientific has been implemented throughout every activity in our company based on the following official standards:
+    </p>
+  
+    <div class="row justify-content-center intro">
+        @for (cert of certifications; track $index) {
+            
+            <div class="col-md-3 my-3">
+                <div class="card text-center shadow">
+                  <img [src]="cert.image" class="card-img-top img-fluid" alt="{{ cert.title }}" />
+                  <div class="card-body">
+                    <h5 class="card-title">{{ cert.title }}</h5>
+                    <a href="{{ cert.pdf }}" target=”_blank” class="btn btn-primary">View Certificate</a>
+                  </div>
+                </div>
+            </div>            
+        }
+    </div>
+  </div>
+  

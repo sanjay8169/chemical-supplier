@@ -51,7 +51,7 @@ nav ul li a:hover {
 .intro {
     font-size: 1.2em;
     margin-bottom: 40px;
-    animation: fadeIn 2s ease-in-out 0.5s;
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* History and Values */
