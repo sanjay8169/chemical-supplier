@@ -1,7 +1,7 @@
 <div class="d-flex flex-column min-vh-100">
   <div class="container-fluid flex-grow-1">
     <div class="row">
-      <nav class="navbar navbar-expand-lg navbar-light bg-info bgcolor" style="color: #00ffcc;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-info bgcolor" style="color: #e0fdf9;">
         <div class="col-sm-8 m-1">
           <a class="navbar-brand" [routerLink]="''">
             <img src="../../images/logo/logo.png" alt="Logo" class="logo">
@@ -58,13 +58,10 @@
         <div class="col-md-3">
           <h5>Company</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="footer-link">Site Map</a></li>
-            <li><a href="#" class="footer-link">About Us</a></li>
-            <li><a href="#" class="footer-link">Facility</a></li>
-            <li><a href="#" class="footer-link">Certifications</a></li>
-            <li><a href="#" class="footer-link">Careers</a></li>
-            <li><a href="#" class="footer-link">Privacy Policy</a></li>
-            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+            <li><a [routerLink]="'about'" class="footer-link">About Us</a></li>
+            <li><a [routerLink]="'downloads/catalogue'" class="footer-link">Catalogue</a></li>
+            <li><a [routerLink]="'downloads/certification'" class="footer-link">Certifications</a></li>
+            <li><a [routerLink]="'downloads/packing'" class="footer-link">Packing</a></li>
           </ul>
         </div>
   
@@ -72,10 +69,7 @@
         <div class="col-md-3">
           <h5>Industries</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="footer-link">Laboratory Institutes</a></li>
-            <li><a href="#" class="footer-link">Food & Nutrition</a></li>
-            <li><a href="#" class="footer-link">Healthcare & Pharmaceuticals</a></li>
-            <li><a href="#" class="footer-link">Custom Research</a></li>
+            <li><a [routerLink]="'product'" class="footer-link">Product Portfolio</a></li>
           </ul>
         </div>
   
